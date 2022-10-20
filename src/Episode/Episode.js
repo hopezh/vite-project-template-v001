@@ -16,5 +16,6 @@ export default class Episode
 
         // setup
         this.sizes = new Sizes()
+
     }
 }
