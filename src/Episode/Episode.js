@@ -1,3 +1,5 @@
+import Sizes from "./Utils/Sizes.js";
+
 // prettier-ignore
 export default class Episode 
 {
@@ -11,5 +13,8 @@ export default class Episode
         // options
         this.canvas = canvas;
         // console.log(this.canvas); 
+
+        // setup
+        this.sizes = new Sizes()
     }
 }
