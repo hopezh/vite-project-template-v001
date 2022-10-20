@@ -1,3 +1,6 @@
+// Author: Bruno Simon
+// Source: https://gist.github.com/brunosimon/120acda915e6629e3a4d497935b16bdf
+
 export default class EventEmitter {
 	constructor() {
 		this.callbacks = {};
