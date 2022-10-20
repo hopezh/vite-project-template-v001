@@ -1,5 +1,9 @@
 import "./style.css";
+import Episode from "./Episode/Episode.js";
 
+// console.log(Episode)
+// instantiate a new Episode
+const episode = new Episode();
 
 // import * as THREE from "three";
 // import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
