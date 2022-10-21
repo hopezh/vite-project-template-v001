@@ -28,6 +28,9 @@ export default class Time extends EventEmitter {
         this.elapsed = this.current - this.start
         // console.log(this.elapsed)
 
+        // trigger an event
+        this.trigger('there-is-a-tick')
+
         // pay attention, use arrow func to make the context of "this" correct
         window.requestAnimationFrame(() => 
         {

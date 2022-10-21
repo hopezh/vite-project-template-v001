@@ -4,6 +4,7 @@ import Time from "./Utils/Time.js";
 // prettier-ignore
 export default class Episode 
 {
+    // [#] constructor
     constructor (canvas)
     {
         console.log('hello new Episode');
@@ -11,26 +12,42 @@ export default class Episode
         // global access
         // window.episode = this; 
 
-        // options
+        // [+] options
         this.canvas = canvas;
         // console.log(this.canvas); 
 
-        // setup
+        // [+] setup 
+
+        // [-] init sizes
         this.sizes = new Sizes()
-        // listen, if window_is_resized is triggered, run the call back func 
+        // [.] event: window resize 
+        // listen, and if window_is_resized is triggered, run the call back func 
         // ...note that arrow func, not a traditional func, must be used here
         // ...so as not to lose the context for "this" 
         this.sizes.on('window_is_resized', () => {
-            console.log('i heard that window is resized...'); 
+            // console.log('i heard that window is resized...'); 
             this.resize(); 
         })
 
+        // [-] init time
         this.time = new Time()
+        // [.] event: time tick update 
+        this.time.on('there-is-a-tick', () => {
+            // console.log('I heard that there is a tick...')
+            this.update()
+
+        })
     }
 
-    // resize func
+    // [+] resize func
     resize()
     {
-        console.log('...so, doing some resize shit...')
+        // console.log('...so, doing the resize shit...')
+    }
+
+    // [+] update func
+    update()
+    {
+        // console.log('...so, doing updating shit at time: ', this.time.current)
     }
 }
