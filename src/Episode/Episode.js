@@ -1,5 +1,6 @@
 import Sizes from "./Utils/Sizes.js";
 import Time from "./Utils/Time.js";
+import * as THREE from "three";
 
 // prettier-ignore
 export default class Episode 
@@ -14,13 +15,14 @@ export default class Episode
 
         // [+] options
         this.canvas = canvas;
-        // console.log(this.canvas); 
 
         // [+] setup 
+        this.sizes = new Sizes()          // [-] size   
+        this.time  = new Time()           // [-] time
+        this.scene = new THREE.Scene()    // [-] scene
 
-        // [-] init sizes
-        this.sizes = new Sizes()
-        // [.] event: window resize 
+        // [+] event
+        // [.] window resize 
         // listen, and if window_is_resized is triggered, run the call back func 
         // ...note that arrow func, not a traditional func, must be used here
         // ...so as not to lose the context for "this" 
@@ -29,9 +31,7 @@ export default class Episode
             this.resize(); 
         })
 
-        // [-] init time
-        this.time = new Time()
-        // [.] event: time tick update 
+        // [.] time tick update 
         this.time.on('there-is-a-tick', () => {
             // console.log('I heard that there is a tick...')
             this.update()
