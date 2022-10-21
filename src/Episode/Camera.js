@@ -1,10 +1,12 @@
 import * as THREE from "three";
+import Episode from './Episode.js';
 
 // prettier-ignore
 export default class Camera
 {
     constructor()
     {
-        console.log('init Camera')
+        this.episode = new Episode();
+        console.log(this.episode)
     }
 }

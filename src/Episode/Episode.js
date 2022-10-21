@@ -46,15 +46,15 @@ export default class Episode
         })
     }
 
-    // [+] resize func
+    // [#] resize func
     resize()
     {
         // console.log('...so, doing the resize shit...')
     }
 
-    // [+] update func
+    // [#] update func
     update()
     {
-        // console.log('...so, doing updating shit at time: ', this.time.current)
+        // console.log('...so, doing updating shit at time:', this.time.current)
     }
 }
