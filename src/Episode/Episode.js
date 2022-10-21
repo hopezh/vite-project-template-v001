@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import Sizes from "./Utils/Sizes.js";
 import Time from "./Utils/Time.js";
+import Camera from "./Camera.js";
 
 // prettier-ignore
 export default class Episode 
@@ -17,9 +18,10 @@ export default class Episode
         this.canvas = canvas;
 
         // [+] setup 
-        this.sizes = new Sizes()          // [-] size   
-        this.time  = new Time()           // [-] time
-        this.scene = new THREE.Scene()    // [-] scene
+        this.sizes  = new Sizes()          // [-] size   
+        this.time   = new Time()           // [-] time
+        this.scene  = new THREE.Scene()    // [-] scene
+        this.camera = new Camera()         // [-] camera
 
         // [+] event
         // [-] window resize 
