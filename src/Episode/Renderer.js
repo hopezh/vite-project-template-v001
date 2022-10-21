@@ -4,6 +4,7 @@ import Episode from "./Episode.js";
 // prettier-ignore
 export default class Renderer 
 {
+    // [#] constructor
     constructor()
     {
         console.log('init Renderer')
@@ -18,6 +19,7 @@ export default class Renderer
         this.setInstance()
     }
 
+    // [#] setInstance
     setInstance()
     {
         this.instance = new THREE.WebGLRenderer({
@@ -35,4 +37,12 @@ export default class Renderer
         this.instance.setSize(this.sizes.width, this.sizes.height)
         this.instance.setPixelRatio(this.sizes.pixelRatio)
     }
+
+    // [#] resize
+    resize()
+    {
+        this.instance.setSize(this.sizes.width, this.sizes.height)
+        this.instance.setPixelRatio(this.sizes.pixelRatio)
+    }
+
 }

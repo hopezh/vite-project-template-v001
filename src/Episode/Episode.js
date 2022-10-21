@@ -50,10 +50,12 @@ export default class Episode
 
     // [#] resize func
     // this func will propagate to the children and their children  
+    // ...i.e. asking the children to resize if they have this func
     resize()
     {
         // console.log('...so, doing the resize shit...')
         this.camera.resize()
+        this.renderer.resize()
     }
 
     // [#] update func
