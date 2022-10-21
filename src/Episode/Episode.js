@@ -50,18 +50,22 @@ export default class Episode
 
     // [#] resize func
     // this func will propagate to the children and their children  
-    // ...i.e. asking the children to resize if they have this func
+    // ...whenever a window resize event is triggered
+    // ...so, put all the resize() of the children here if they have one
     resize()
     {
-        // console.log('...so, doing the resize shit...')
+        // console.log('...so, I'll do the resize shit...')
         this.camera.resize()
         this.renderer.resize()
     }
 
     // [#] update func
+    // this func will propagate to the children of the class and their children
+    // ...whenever a tick event is triggered
+    // ...so, put all the update() of the children here if they have one
     update()
     {
-        // console.log('...so, doing updating shit at time:', this.time.current)
+        // console.log('...so, I'll do the update shit @:', this.time.current)
         this.camera.update() 
         this.renderer.update()  // Note: udpate camera before update renderer
     }
