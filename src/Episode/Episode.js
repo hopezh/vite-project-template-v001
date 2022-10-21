@@ -33,38 +33,51 @@ export default class Episode
 
         // [+] event
         // [-] window resize 
-        // listen, and if window_is_resized is triggered, run the call back func 
-        // ...note that arrow func, not a traditional func, must be used here
-        // ...so as not to lose the context for "this" 
         this.sizes.on('window_is_resized', () => {
+            /*
+                Listen, and if window_is_resized is triggered, run call back func. 
+                Note that arrow func, not a traditional func, must be used here, 
+                ...so as not to lose the context for "this" 
+            */
+
             // console.log('i heard that window is resized...'); 
             this.resize(); 
         })
 
         // [-] time tick update 
         this.time.on('there-is-a-tick', () => {
+            /*
+                Listen, and if there-is-a-tick is triggered, run call back func. 
+            */
+
             // console.log('I heard that there is a tick...')
             this.update()
         })
     }
 
     // [#] resize func
-    // this func will propagate to the children and their children  
-    // ...whenever a window resize event is triggered
-    // ...so, put all the resize() of the children here if they have one
     resize()
     {
+        /*
+            This func will propagate to the children and their children  
+            ...whenever a window resize event is triggered
+            ...so, put all the resize() of the children here if they have one
+        */
+
         // console.log('...so, I'll do the resize shit...')
         this.camera.resize()
         this.renderer.resize()
     }
 
     // [#] update func
-    // this func will propagate to the children of the class and their children
-    // ...whenever a tick event is triggered
-    // ...so, put all the update() of the children here if they have one
     update()
     {
+        /*
+            This func will propagate to the children and their children
+            ...whenever a tick event is triggered
+            ...so, put all the update() of the children here if they have one
+        */
+
         // console.log('...so, I'll do the update shit @:', this.time.current)
         this.camera.update() 
         this.renderer.update()  // Note: udpate camera before update renderer
