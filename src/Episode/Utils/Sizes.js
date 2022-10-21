@@ -1,9 +1,11 @@
+import EventEmitter from "./EventEmitter.js"
+
 // prettier-ignore
-export default class Sizes
+export default class Sizes extends EventEmitter 
 {
     constructor ()
     {
-        console.log('init Sizes')
+        super() // call the inherited constructor
         
         // setup 
         this.width      = window.innerWidth;
@@ -15,6 +17,11 @@ export default class Sizes
             this.width      = window.innerWidth;
             this.height     = window.innerHeight;
             this.pixelRatio = Math.min(window.devicePixelRatio, 2);
+
+            // trigger an event
+            this.trigger('window_is_resized')
         })
+
+        console.log('init Sizes')
     }
 }

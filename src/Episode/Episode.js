@@ -16,6 +16,18 @@ export default class Episode
 
         // setup
         this.sizes = new Sizes()
+        // listen, if window_is_resized is triggered, run the call back func 
+        // ...note that arrow func, not a traditional func, must be used here
+        // ...so as not to lose the context for "this" 
+        this.sizes.on('window_is_resized', () => {
+            console.log('i heard that window is resized...'); 
+            this.resize(); 
+        })
+    }
 
+    // resize func
+    resize()
+    {
+        console.log('...so, doing some resize shit...')
     }
 }
