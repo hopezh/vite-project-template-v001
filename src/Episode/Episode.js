@@ -1,4 +1,5 @@
 import Sizes from "./Utils/Sizes.js";
+import Time from "./Utils/Time.js";
 
 // prettier-ignore
 export default class Episode 
@@ -23,6 +24,8 @@ export default class Episode
             console.log('i heard that window is resized...'); 
             this.resize(); 
         })
+
+        this.time = new Time()
     }
 
     // resize func
