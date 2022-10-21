@@ -2,7 +2,7 @@ import * as THREE from "three";
 import Sizes from "./Utils/Sizes.js";
 import Time from "./Utils/Time.js";
 import Camera from "./Camera.js";
-import Renderer from './Renderer.js'
+import Renderer from "./Renderer.js";
 
 // prettier-ignore
 export default class Episode 
@@ -63,5 +63,6 @@ export default class Episode
     {
         // console.log('...so, doing updating shit at time:', this.time.current)
         this.camera.update() 
+        this.renderer.update()  // Note: udpate camera before update renderer
     }
 }

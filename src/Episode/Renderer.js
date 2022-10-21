@@ -45,4 +45,12 @@ export default class Renderer
         this.instance.setPixelRatio(this.sizes.pixelRatio)
     }
 
+    // [#] update
+    update()
+    {
+        this.instance.render(
+            this.scene, 
+            this.camera.instance
+        )
+    }
 }
