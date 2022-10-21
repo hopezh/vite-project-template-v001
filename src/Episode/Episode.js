@@ -6,13 +6,19 @@ import Camera from "./Camera.js";
 // prettier-ignore
 export default class Episode 
 {
+    static instance
+
     // [#] constructor
     constructor (canvas)
     {
-        console.log('hello new Episode');
+        // [+] create a singleton 
+        if (Episode.instance)
+        {
+            return Episode.instance;    // return the instance if it exists
+        }
+        Episode.instance = this; 
 
-        // global access
-        // window.episode = this; 
+        console.log('hello new Episode');
 
         // [+] options
         this.canvas = canvas;
