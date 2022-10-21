@@ -47,14 +47,17 @@ export default class Episode
     }
 
     // [#] resize func
+    // this func will propagate to the children and their children  
     resize()
     {
         // console.log('...so, doing the resize shit...')
+        this.camera.resize()
     }
 
     // [#] update func
     update()
     {
         // console.log('...so, doing updating shit at time:', this.time.current)
+        this.camera.update() 
     }
 }
