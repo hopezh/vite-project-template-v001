@@ -9,7 +9,7 @@ export default class Episode
 {
     static instance
 
-    // [#] constructor
+    // [#] constructor 
     constructor (canvas)
     {
         // [+] create a singleton 
@@ -31,7 +31,8 @@ export default class Episode
         this.camera   = new Camera()         // [-] camera
         this.renderer = new Renderer()       // [-] renderer 
 
-        // [+] event
+        // [+] event listener 
+
         // [-] window resize 
         this.sizes.on('window_is_resized', () => {
             /*
@@ -44,7 +45,7 @@ export default class Episode
             this.resize(); 
         })
 
-        // [-] time tick update 
+        // [-] update with time tick 
         this.time.on('there-is-a-tick', () => {
             /*
                 Listen, and if there-is-a-tick is triggered, run call back func. 
@@ -55,7 +56,7 @@ export default class Episode
         })
     }
 
-    // [#] resize func
+    // [#] resize 
     resize()
     {
         /*
@@ -69,7 +70,7 @@ export default class Episode
         this.renderer.resize()
     }
 
-    // [#] update func
+    // [#] update 
     update()
     {
         /*
