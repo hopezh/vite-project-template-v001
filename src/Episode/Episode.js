@@ -19,7 +19,7 @@ export default class Episode
         }
         Episode.instance = this; 
 
-        console.log('hello new Episode');
+        console.log('Hello, here is a new Episode.');
 
         // [+] options
         this.canvas = canvas;
