@@ -50,7 +50,7 @@ export default class Renderer
     {
         this.instance.render(
             this.scene, 
-            this.camera.instance
+            this.camera.instance // ? why call cam instance here? 
         )
     }
 }
