@@ -3,6 +3,7 @@ import Sizes from "./Utils/Sizes.js";
 import Time from "./Utils/Time.js";
 import Camera from "./Camera.js";
 import Renderer from "./Renderer.js";
+import World from "./World/World.js";
 
 // prettier-ignore
 export default class Episode 
@@ -22,14 +23,15 @@ export default class Episode
         console.log('Hello, here is a new Episode.');
 
         // [+] options
-        this.canvas = canvas;
+        this.canvas = canvas;   // [-] canvas
 
         // [+] setup 
-        this.sizes    = new Sizes()          // [-] size   
-        this.time     = new Time()           // [-] time
-        this.scene    = new THREE.Scene()    // [-] scene
-        this.camera   = new Camera()         // [-] camera
-        this.renderer = new Renderer()       // [-] renderer 
+        this.sizes    = new Sizes()         // [-] size   
+        this.time     = new Time()          // [-] time
+        this.scene    = new THREE.Scene()   // [-] scene
+        this.camera   = new Camera()        // [-] camera
+        this.renderer = new Renderer()      // [-] renderer 
+        this.world    = new World()         // [-] world
 
         // [+] event listener 
 
