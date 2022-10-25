@@ -1,6 +1,6 @@
-import * as THREE from "three"; 
+import * as THREE from "three";
 import Episode from "../Episode.js";
-import Environ from './Environ.js'
+import Environ from "./Environ.js";
 
 // prettier-ignore
 export default class World 
@@ -15,7 +15,7 @@ export default class World
         // test mesh
         const testMesh = new THREE.Mesh(
             new THREE.BoxGeometry(1, 1, 1), 
-            new THREE.MeshBasicMaterial( { wireframe: true })
+            new THREE.MeshStandardMaterial()
         ) 
         this.scene.add(testMesh)
 
